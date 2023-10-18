@@ -179,7 +179,7 @@ $$/      $$/  $$$$$$$/        $$$$$$/   $$$$$$$/ $$$$$$$/  $$$$$$$/  $$/ $$/    
  {gn}Owner    : {cn}Md Sabbir Bhai{ed}
  {gn}Guthub   : {cn}Rdx337{ed}
  {gn}Facebook : {cn}MdSabbir Bhai{ed}
- {gn}Taligram : {wn}https://t.me/jubairff{ed}
+ {gn}Taligram : {wn}https://t.me/darkbin3221{ed}
  {gn}Tools    : {cn}RANK{pn} •{gn}[{cn}version \033[1;42m{rn}•3.6•{ed}{gn}]{ed}
 {yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{ed}''')
 # MAIN MANU 
