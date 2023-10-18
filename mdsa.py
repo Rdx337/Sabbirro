@@ -87,7 +87,7 @@ def __init__(self):
         self.cp = []
         self.loop = 0
 try:
- prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
+ prox= requests.get('https://github.com/Rdx337/Sabbiropi/blob/main/prox.txt').text
  open('.prox.txt','w').write(prox)
 except Exception as e:
  print('')
@@ -180,7 +180,7 @@ $$/      $$/  $$$$$$$/        $$$$$$/   $$$$$$$/ $$$$$$$/  $$$$$$$/  $$/ $$/    
  {gn}Guthub   : {cn}Rdx337{ed}
  {gn}Facebook : {cn}MdSabbir Bhai{ed}
  {gn}Taligram : {wn}https://t.me/darkbin3221{ed}
- {gn}Tools    : {cn}RANK{pn} •{gn}[{cn}version \033[1;42m{rn}•3.6•{ed}{gn}]{ed}
+ {gn}Tools    : {cn}SABBIR{pn} •{gn}[{cn}version \033[1;42m{rn}•3.6•{ed}{gn}]{ed}
 {yn}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{ed}''')
 # MAIN MANU 
 def Main():
